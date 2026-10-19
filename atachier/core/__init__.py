@@ -3,7 +3,7 @@ from .coordinates import CoordinateSystem
 from .document import Document
 from .element import DocumentElement
 from .element_type import ElementType
-from .exceptions import SciddleError, ValidationError
+from .exceptions import AtachierError, ValidationError
 from .geometry import contains, distance, intersection, overlaps, union
 from .page import DocumentPage
 from .relationships import (
@@ -30,7 +30,7 @@ __all__ = [
     "Document",
     "DocumentElement",
     "ElementType",
-    "SciddleError",
+    "AtachierError",
     "ValidationError",
     "DocumentPage",
     "intersection",
