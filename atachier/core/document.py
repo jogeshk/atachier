@@ -1,5 +1,5 @@
-﻿"""
-Core document model for Sciddle.
+"""
+Core document model for Atachier.
 """
 
 from __future__ import annotations
@@ -7,14 +7,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-from sciddle.core.exceptions import ValidationError
-from sciddle.core.page import DocumentPage
+from atachier.core.exceptions import ValidationError
+from atachier.core.page import DocumentPage
 
 
 @dataclass(slots=True)
 class Document:
     """
-    Root document representation used by Sciddle.
+    Root document representation used by Atachier.
     """
 
     source: str | None = None
