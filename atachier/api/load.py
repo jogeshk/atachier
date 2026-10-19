@@ -1,4 +1,4 @@
-"""Sciddle public API."""
+"""Atachier public API."""
 
 from pathlib import Path
 
