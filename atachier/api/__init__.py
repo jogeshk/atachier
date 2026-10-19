@@ -1,4 +1,4 @@
-"""Sciddle API."""
+"""Atachier API."""
 
 from .load import load
 
