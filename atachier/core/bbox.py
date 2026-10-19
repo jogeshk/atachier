@@ -1,10 +1,10 @@
 """
-Sciddle 2D bounding-box model.
+Atachier 2D bounding-box model.
 
-BoundingBox represents an axis-aligned rectangle in Sciddle's
+BoundingBox represents an axis-aligned rectangle in Atachier's
 document coordinate space.
 
-The current Sciddle geometry model is strictly 2D.
+The current Atachier geometry model is strictly 2D.
 """
 
 from __future__ import annotations
@@ -12,8 +12,8 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
-from sciddle.core.coordinates import CoordinateSystem
-from sciddle.core.exceptions import ValidationError
+from atachier.core.coordinates import CoordinateSystem
+from atachier.core.exceptions import ValidationError
 
 
 @dataclass(frozen=True, slots=True)
@@ -152,22 +152,13 @@ class BoundingBox:
             coordinate_system=self.coordinate_system,
         )
 
-    def overlaps(
-        self,
-        other: BoundingBox,
-    ) -> bool:
-        """
-        Return True when the boxes share positive area.
+    def overlaps(self, other: BoundingBox) -> bool:
+        self._validate_compatible(other)
 
-        Merely touching at an edge or point does not count as overlap.
-        """
-        intersection = self.intersection(other)
+        overlap_width = min(self.x2, other.x2) - max(self.x, other.x)
+        overlap_height = min(self.y2, other.y2) - max(self.y, other.y)
 
-        return (
-            intersection is not None
-            and intersection.width > 0
-            and intersection.height > 0
-        )
+        return overlap_width > 0.0 and overlap_height > 0.0
 
     def contains(
         self,
