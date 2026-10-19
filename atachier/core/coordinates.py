@@ -1,7 +1,7 @@
 """
-Coordinate-system definitions for Sciddle.
+Coordinate-system definitions for Atachier.
 
-Sciddle currently operates on 2D document geometry only.
+Atachier currently operates on 2D document geometry only.
 
 The coordinate-system identity is kept explicit so that different
 document sources cannot be silently mixed.
@@ -15,12 +15,12 @@ from enum import Enum
 
 class CoordinateSystem(str, Enum):
     """
-    Coordinate systems supported by Sciddle.
+    Coordinate systems supported by Atachier.
 
     DOCUMENT_2D represents the native 2D coordinate space used for
     document geometry.
 
-    Sciddle does not currently define or support any 3D coordinate
+    Atachier does not currently define or support any 3D coordinate
     systems.
     """
 
