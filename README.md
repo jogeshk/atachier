@@ -1,14 +1,14 @@
-# Sciddle
+# Atachier
 
 ## Hardware-Accelerated Spatial Graph Document Extraction Engine
 
-Sciddle is a local-first document processing engine designed to represent documents as **2D spatial structures** rather than treating them as plain text.
+Atachier is a local-first document processing engine designed to represent documents as **2D spatial structures** rather than treating them as plain text.
 
 Instead of reducing a document to:
 
     Document → Text → Output
 
-Sciddle is designed around:
+Atachier is designed around:
 
     Document
         ↓
@@ -36,39 +36,11 @@ The central idea is simple:
 
 A title above a paragraph, a caption below an image, a label beside a figure, a table inside a region, or two columns positioned next to each other all contain spatial information.
 
-Sciddle is being engineered to preserve and reason about that information.
+Atachier is being engineered to preserve and reason about that information.
 
 ---
 
-# Project Status
-
-**Current development phase: Phase 1 — Python Foundation**
-
-Phase 1 establishes the fundamental Sciddle package, data models, validation, public API foundation, packaging, and automated tests.
-
-Current implemented foundation includes:
-
-- Python package structure
-- Version management
-- Sciddle exception hierarchy
-- Document element types
-- 2D bounding boxes
-- Document elements
-- Document pages
-- Documents
-- Basic validation
-- Public `sciddle` package API
-- PyPI-compatible project configuration
-- Editable installation
-- Unit tests
-
-The current implementation is intentionally small.
-
-Advanced document parsing, layout analysis, spatial graph construction, native acceleration, GPU acceleration, and AI/GNN functionality are **not being falsely presented as implemented**.
-
----
-
-# Why Sciddle?
+# Why Atachier?
 
 Traditional document extraction often focuses primarily on text.
 
@@ -88,7 +60,7 @@ For example, consider a document containing:
 
 The text alone does not fully describe the document.
 
-Sciddle aims to preserve the relationship between:
+Atachier aims to preserve the relationship between:
 
     What something is
     Where it is
@@ -102,7 +74,7 @@ This creates a foundation for spatial document understanding.
 
 # Core Concept
 
-Sciddle's central representation is:
+Atachier's central representation is:
 
     Elements
         +
@@ -166,7 +138,7 @@ Conceptually:
 
 # 2D First
 
-Sciddle is currently a **2D document-processing system**.
+Atachier is currently a **2D document-processing system**.
 
 The current architecture focuses on document geometry such as:
 
@@ -189,12 +161,12 @@ This keeps the current architecture focused and easier to test, optimize, and ma
 
 # Local-First Architecture
 
-Sciddle is designed to process documents locally.
+Atachier is designed to process documents locally.
 
 The core workflow is intended to work without requiring:
 
-- a Sciddle server
-- a Sciddle cloud service
+- a Atachier server
+- a Atachier cloud service
 - remote document processing
 - uploading documents to a remote service
 - external processing APIs
@@ -205,7 +177,7 @@ PyPI is a distribution mechanism, not a remote processing backend.
 The long-term goal is:
 
 ```python
-import sciddle
+import atachier
 
-doc = sciddle.load("document.pdf")
+doc = atachier.load("document.pdf")
 result = doc.extract()
