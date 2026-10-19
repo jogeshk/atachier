@@ -1,5 +1,5 @@
 [project]
-name = "sciddle"
+name = "atachier"
 version = "0.1.0"
 
 description = "A local-first 2D spatial graph document extraction engine that represents documents as elements, geometry, layout, and spatial relationships for structured document understanding."
@@ -14,9 +14,17 @@ authors = [
 
 readme = "README.md"
 
-dependencies = []
+dependencies = [
+    "pypdf>=6.0",
+    "pillow>=10.0",
+]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8"
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["atachier", "atachier.*"]
+exclude = ["atachier_geometry", "atachier_geometry.*", "tests", "tests.*"]
