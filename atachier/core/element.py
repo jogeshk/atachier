@@ -1,5 +1,5 @@
-﻿"""
-Core document element model for Sciddle.
+"""
+Core document element model for Atachier.
 """
 
 from __future__ import annotations
@@ -8,9 +8,9 @@ import math
 from dataclasses import dataclass, field
 from typing import Any
 
-from sciddle.core.bbox import BoundingBox
-from sciddle.core.element_type import ElementType
-from sciddle.core.exceptions import ValidationError
+from atachier.core.bbox import BoundingBox
+from atachier.core.element_type import ElementType
+from atachier.core.exceptions import ValidationError
 
 
 @dataclass(slots=True)
